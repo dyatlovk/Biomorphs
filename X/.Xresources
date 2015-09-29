@@ -1,0 +1,74 @@
+! Urxvt ------------------------------------------------------------
+URxvt*termName: screen-256color
+URxvt.depth: 32
+!URxvt.background: #000000
+!URxvt.foreground: #bcbcbc
+URxvt.scrollstyle: plain
+urxvt*scrollBar: false
+URxvt.colorUL: #0088CC
+URxvt*.transparent:  false
+!URxvt*shading: 50
+URxvt.font: xft:DejaVu Sans Mono
+urxvt*transparent:false
+
+! URxvt-Perls ------------------------------------------------------
+URxvt*altSendsEscape:       true
+URxvt.perl-ext-common:      default,clipboard,keyboard-select,url-select
+URxvt.keysym.M-c:           perl:clipboard:copy
+URxvt.keysym.M-v:           perl:clipboard:paste
+URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.url-select.button:    1
+/oin/bash: special: cemmand not found
+URxvt.url-select.underline: true
+
+! Font settings ----------------------------------------------------
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: true
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+
+! Colors ----------------------------------------------------------
+! special
+*.foreground:   #98d1ce
+*.background:   #0a0f14
+*.cursorColor:  #98d1ce
+
+! black
+*.color0:       #0a0f14
+*.color8:       #10151b
+
+! red
+*.color1:       #c33027
+*.color9:       #d26939
+
+! green
+*.color2:       #26a98b
+*.color10:      #081f2d
+
+! yellow
+*.color3:       #edb54b
+*.color11:      #245361
+
+! blue
+*.color4:       #195465
+*.color12:      #093748
+
+! magenta
+*.color5:       #4e5165
+*.color13:      #888ba5
+
+! cyan
+*.color6:       #33859d
+*.color14:      #599caa
+
+! white
+*.color7:       #98d1ce
+*.color15:      #d3ebe9
+
