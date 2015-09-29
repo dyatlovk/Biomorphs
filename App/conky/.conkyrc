@@ -1,0 +1,96 @@
+# Conky theme put together by Culinax
+# Part of the Manjaro Awesome WM Respin
+
+background no
+own_window yes
+own_window_type override
+own_window_hints undecorated,below,skip_taskbar,skip_pager,sticky
+own_window_transparent 1
+own_window_argb_visual yes
+own_window_argb_value 200
+default_color 000000
+alignment top_right
+gap_x 18
+gap_y 36
+use_xft yes
+xftfont Sans:size=10
+uppercase no
+update_interval 2
+total_run_times 0
+double_buffer yes
+no_buffers yes
+cpu_avg_samples 2
+draw_shades no
+draw_outline no
+draw_borders no
+minimum_size 215 525
+maximum_width 250
+
+color1 447799
+color2 9eb1ba
+color3 ffffff
+
+TEXT
+# ${color1}CLOCK${hr}
+# ${color2}${time %d %B %Y}${alignr}${color3}${font Dejavu Sans:size=12}${time %H:%M}${font}  
+
+${color1}LINUX   ${hr}
+${color2}Host:${alignr}${color3}${nodename}
+${color2}Kernel:${alignr}${color3}${kernel}
+${color2}Uptime:${alignr}${color3}${uptime}
+${color2}CPU:${alignr}${color3}${cpu cpu0}%
+${color2}RAM:${alignr}${color3}${mem} / ${memmax}
+${color2}Battery:${alignr}${color3}${battery_percent}%
+
+${color1}PROCESSES   ${hr}
+${color2}${top_mem name 1}${alignr}${color3}${top_mem mem 1}
+${color2}${top_mem name 2}${alignr}${color3}${top_mem mem 2}
+${color2}${top_mem name 3}${alignr}${color3}${top_mem mem 3}
+${color2}${top_mem name 4}${alignr}${color3}${top_mem mem 4}
+
+${color1}NETWORK  	$hr
+${color2}Gateway:$alignr ${color3} $gw_ip
+${color2}Local IP: $alignr ${color3} ${addr wlp3s0}
+${color2}Connection Quality: $alignr ${color3} ${wireless_link_qual wlp3s0}%
+
+#${color1}KEYBINDINGS   ${hr}
+#${color2}Mod4+p${color3}${alignr}Dmenu
+#${color2}Mod4+Return${color3}${alignr}Terminal
+#${color2}Mod4+d${color3}${alignr}Dwb
+#${color2}Mod4+t${color3}${alignr}SpaceFM
+#${color2}Mod4+j${color3}${alignr}Focus Next
+#${color2}Mod4+k${color3}${alignr}Focus Previous
+#${color2}Mod4+Shift+c${color3}${alignr}Kill Client
+#${color2}Mod4+[1-9]${color3}${alignr}View tag \#
+#${color2}Mod4+Shift+[1-9]${color3}${alignr}Move to tag \#
+#${color2}Mod4+h${color3}${alignr}Decrease Master
+#${color2}Mod4+l${color3}${alignr}Increase Master
+#${color2}Mod4+w${color3}${alignr}Open menu
+#${color2}Mod4+F10${color3}${alignr}Toggle Conky
+#${color2}Mod4+f${color3}${alignr}Set client fullscreen
+#${color2}Mod4+Ctrl+Space${color3}${alignr}Set client floating
+#${color2}Mod4+Space${color3}${alignr}Cycle Layouts
+#${color2}Mod4+Ctrl+t${color3}${alignr}Tiling mode
+#${color2}Mod4+Ctrl+b${color3}${alignr}Bottom Stack
+#${color2}Mod4+Ctrl+s${color3}${alignr}Fair
+#${color2}Mod4+Ctrl+m${color3}${alignr}Maximized
+#${color2}Mod4+Ctrl+f${color3}${alignr}Floating mode
+#${color2}Mod4+Shift+l${color3}${alignr}Lock Screen
+#${color2}Mod4+Control+r${color3}${alignr}Restart Awesome
+#${color2}Mod4+Shift+q${color3}${alignr}Logout
+
+#MPD STATUS
+${color1}PLAYER STATUS  ${hr}
+${color3} ${mpd_title}
+
+#WEATHER
+${color1}WEATHER ${hr}
+${execi 300 curl -s "http://weather.yahooapis.com/forecastrss?w=<CITYID>&u=c" -o ~/.cache/weather.xml}
+${color2}City${alignr}${color3}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "temp=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}°
+${color2}Currently${alignr}${color3}${execi 300 grep "yweather:condition" ~/.cache/weather.xml | grep -o "text=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
+${color2}Weather ${color3}${alignr}${execi 300 grep "yweather:wind" ~/.cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}${execi 300 grep "yweather:units" ~/.cache/weather.xml | grep -o "speed=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}
+${color2}Humidity${color4}${alignr}${execi 300 grep "yweather:atmosphere" ~/.cache/weather.xml | grep -o "humidity=\"[^\"]*\"" | grep -o "\"[^\"]*\"" | grep -o "[^\"]*"}%
+
+#Experince python
+${color1}MAIL		${hr}
+${color2}Mail Server:${color3} ${alignr} ${execi 300 python <path to sctipt python mail> }
