@@ -1,0 +1,104 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" line numbers
+:set number
+
+" set colorscheme
+colorscheme jupiter
+
+syntax enable
+set tabstop=4
+set cursorline
+set wildmenu
+
+" foldings
+set foldenable
+set foldlevelstart=2
+set foldnestmax=10
+nnoremap <space> za
+set foldmethod=indent
+
+" 256-colors
+set t_Co=256
+
+execute pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VIM user interface
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" colorize BG HEX
+":let g:colorizer_auto_color = 1
+
+" filetypes
+filetype indent on
+filetype on
+
+" set encodings
+set fileencodings=utf8,cp1251
+set encoding=utf8
+
+" Set to auto read when a file is changed from the outside
+set autoread
+
+"Always show current position
+set ruler
+
+" Highlight search results
+set hlsearch
+
+" Show matching brackets when text indicator is over them
+set showmatch
+
+" How many tenths of a second to blink when matching brackets
+set mat=2
+
+" mouse active
+set mouse=a
+
+" show runned command
+set showcmd
+
+" show tabs always
+set showtabline=2
+
+" auto complete
+set completeopt=longest,menuone
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Text, tab and indent related
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Use spaces instead of tabs
+set expandtab
+
+" Be smart when using tabs ;)
+set smarttab
+
+" show indent chars
+set listchars=tab:··
+
+" show specific chars
+set list
+if &listchars ==# 'eol:$'
+    set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+
+" set shift in '<' & '>'
+set shiftwidth=4
+
+" Tabs
+nmap <C-t> :tabnew<CR>
+imap <C-t> <Esc>:tabnew<CR>a
+nmap <C-w> :tabclose<CR>
+imap <C-w> <Esc>:tabclose<CR>
+
+map <S-TAB> :tabprevious<CR>
+nmap <S-TAB> :tabprevious<CR>
+imap <S-TAB> <Esc>:tabprevious<CR>i
+map <C-TAB> :tabnext<CR>
+nmap <C-TAB> :tabnext<CR>
+imap <C-TAB> <Esc>:tabnext<CR>i
