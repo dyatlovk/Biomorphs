@@ -9,14 +9,15 @@ format "44100:16:2"
  
 #lyrics_directory="~/.ncmpcpp/lyrics"
 visualizer_in_stereo = no
+visualizer_output_name = "visualizer"
 visualizer_type = spectrum
-visualizer_look = ==
-visualizer_color = "blue"
+visualizer_look = "▋▋"
+visualizer_color = blue
 
 user_interface = "alternative"
 
 playlist_disable_highlight_delay = 2
-message_delay_time = 1
+message_delay_time = 30
 browser_sort_format = {%l} | {%f}
 
 #selected_item_suffix = $9
@@ -42,7 +43,6 @@ progressbar_look = "─╼─"
 startup_screen = playlist
 display_bitrate = yes
 colors_enabled = yes
-#visualizer_color = red
 progressbar_color = white
 progressbar_elapsed_color = cyan
 main_window_color = white
