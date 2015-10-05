@@ -10,10 +10,11 @@ URxvt*.transparent:  false
 !URxvt*shading: 50
 URxvt.font: xft:DejaVu Sans Mono
 urxvt*transparent:false
+URxvt*skipBuiltinGlyphs: true
 
 ! URxvt-Perls ------------------------------------------------------
 URxvt*altSendsEscape:       true
-URxvt.perl-ext-common:      default,clipboard,keyboard-select,url-select
+URxvt.perl-ext-common:      default,clipboard,keyboard-select,url-select,tabbed
 URxvt.keysym.M-c:           perl:clipboard:copy
 URxvt.keysym.M-v:           perl:clipboard:paste
 URxvt.keysym.M-C-v:         perl:clipboard:paste_escaped
