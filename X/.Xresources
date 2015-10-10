@@ -11,6 +11,7 @@ URxvt*.transparent:  false
 URxvt.font: xft:DejaVu Sans Mono
 urxvt*transparent:false
 URxvt*skipBuiltinGlyphs: true
+urxvt*saveLines: 512
 
 ! URxvt-Perls ------------------------------------------------------
 URxvt*altSendsEscape:       true
